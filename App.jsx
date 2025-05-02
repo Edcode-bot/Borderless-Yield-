@@ -1,82 +1,117 @@
-import React from 'react';
+// Borderless Yield Frontend - React + Tailwind with Features and Footer
+import { useState } from 'react';
+import { ethers } from 'ethers';
 import { 
-  FaGlobe, FaExchangeAlt, FaPaperPlane, FaNetworkWired, FaChartLine,
-  FaDollarSign, FaBalanceScale, FaBolt, FaShieldAlt, FaMoneyBillWave,
-  FaPiggyBank, FaPercentage, FaCoins, FaRocket,
-  FaHandsHelping, FaTree, FaLandmark, FaUsers, FaBookOpen,
+  FaGlobe, FaExchangeAlt, FaDollarSign, FaPiggyBank, FaHandsHelping,
   FaTwitter, FaFacebook, FaTelegramPlane, FaDiscord
 } from 'react-icons/fa';
 
-function App() {
+export default function App() {
+  const [walletAddress, setWalletAddress] = useState('');
+
+  const connectWallet = async () => {
+    if (window.ethereum) {
+      try {
+        const accounts = await window.ethereum.request({ method: 'eth_requestAccounts' });
+        setWalletAddress(accounts[0]);
+      } catch (error) {
+        console.error('Wallet connection failed:', error);
+      }
+    } else {
+      alert('MetaMask not found. Please install it.');
+    }
+  };
+
   return (
-    <div className="min-h-screen bg-gray-50 p-8">
-      <section className="max-w-6xl mx-auto">
-        <h2 className="text-3xl font-bold text-center mb-8">Why Choose Borderless Yield?</h2>
+    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-blue-100 text-gray-800">
+      <nav className="bg-white shadow p-4 flex justify-between items-center">
+        <h1 className="text-xl font-bold text-blue-700">Borderless Yield</h1>
+        <button 
+          onClick={connectWallet} 
+          className="bg-blue-600 text-white px-4 py-2 rounded-xl hover:bg-blue-700"
+        >
+          {walletAddress ? 'Connected' : 'Connect Wallet'}
+        </button>
+      </nav>
+
+      <header className="text-center py-16 px-4 bg-gradient-to-br from-green-100 to-blue-100">
+        <h2 className="text-4xl font-bold mb-4 text-blue-800">Invest in Local Impact</h2>
+        <p className="text-lg mb-6 max-w-xl mx-auto text-gray-700">
+          Borderless Yield lets diaspora communities invest in small businesses across Africa and LATAM using stablecoins.
+        </p>
+        <button className="bg-green-600 text-white px-6 py-3 rounded-full text-lg hover:bg-green-700 transition">
+          Get Started
+        </button>
+      </header>
+
+      {/* Features Section */}
+      <section className="py-12 px-4 max-w-7xl mx-auto">
+        <h3 className="text-3xl font-bold text-center mb-10 text-blue-800">Key Benefits</h3>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Feature 1: Global Access */}
-          <div className="group flex flex-col items-center bg-gradient-to-br from-blue-400 to-indigo-600 text-white rounded-lg p-6 transform hover:scale-105 transition duration-300 ease-in-out">
-            <FaGlobe className="text-4xl mb-4 animate-bounce" />
-            <h3 className="text-xl font-semibold mb-2">Global Market Access</h3>
-            <ul className="list-disc list-inside space-y-2 text-left">
-              <li><FaChartLine className="inline-block mr-2" />Market diversification</li>
-              <li><FaExchangeAlt className="inline-block mr-2" />Multi-currency portfolios</li>
-              <li><FaPaperPlane className="inline-block mr-2" />Fast cross-border transfers</li>
-              <li><FaNetworkWired className="inline-block mr-2" />Decentralized connectivity</li>
-              <li><FaChartLine className="inline-block mr-2" />High liquidity pools</li>
+          {/* Feature 1 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:scale-105">
+            <FaGlobe className="text-3xl text-green-600 mb-4" />
+            <h4 className="text-xl font-semibold mb-2">Global Access</h4>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Multi-region support</li>
+              <li>Cross-border participation</li>
+              <li>Decentralized network</li>
+              <li>24/7 availability</li>
+              <li>Worldwide liquidity</li>
             </ul>
           </div>
-          {/* Feature 2: Stablecoins */}
-          <div className="group flex flex-col items-center bg-gradient-to-br from-green-400 to-blue-500 text-white rounded-lg p-6 transform hover:scale-105 transition duration-300 ease-in-out">
-            <FaDollarSign className="text-4xl mb-4 animate-bounce" />
-            <h3 className="text-xl font-semibold mb-2">Stablecoin Benefits</h3>
-            <ul className="list-disc list-inside space-y-2 text-left">
-              <li><FaBalanceScale className="inline-block mr-2" />Price stability</li>
-              <li><FaBolt className="inline-block mr-2" />Instant transactions</li>
-              <li><FaShieldAlt className="inline-block mr-2" />Secure smart contracts</li>
-              <li><FaMoneyBillWave className="inline-block mr-2" />Low fees</li>
-              <li><FaCoins className="inline-block mr-2" />Efficient liquidity</li>
+
+          {/* Feature 2 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:scale-105">
+            <FaDollarSign className="text-3xl text-yellow-500 mb-4" />
+            <h4 className="text-xl font-semibold mb-2">Stablecoin Security</h4>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Price stability</li>
+              <li>Fast transactions</li>
+              <li>Low fees</li>
+              <li>Asset-backed coins</li>
+              <li>Secure wallets</li>
             </ul>
           </div>
-          {/* Feature 3: High Yields */}
-          <div className="group flex flex-col items-center bg-gradient-to-br from-purple-400 to-pink-500 text-white rounded-lg p-6 transform hover:scale-105 transition duration-300 ease-in-out">
-            <FaPiggyBank className="text-4xl mb-4 animate-bounce" />
-            <h3 className="text-xl font-semibold mb-2">High-Yield Opportunities</h3>
-            <ul className="list-disc list-inside space-y-2 text-left">
-              <li><FaChartLine className="inline-block mr-2" />Passive income growth</li>
-              <li><FaPercentage className="inline-block mr-2" />Competitive APYs</li>
-              <li><FaCoins className="inline-block mr-2" />Compounded returns</li>
-              <li><FaRocket className="inline-block mr-2" />Accelerated earnings</li>
-              <li><FaPiggyBank className="inline-block mr-2" />Diversified yield streams</li>
+
+          {/* Feature 3 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:scale-105">
+            <FaPiggyBank className="text-3xl text-pink-500 mb-4" />
+            <h4 className="text-xl font-semibold mb-2">High Yield</h4>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Attractive interest rates</li>
+              <li>Compounded returns</li>
+              <li>Diverse assets</li>
+              <li>Smart contract automation</li>
+              <li>Real-time rewards</li>
             </ul>
           </div>
-          {/* Feature 4: Impact & Trust */}
-          <div className="group flex flex-col items-center bg-gradient-to-br from-yellow-400 to-orange-500 text-white rounded-lg p-6 transform hover:scale-105 transition duration-300 ease-in-out">
-            <FaHandsHelping className="text-4xl mb-4 animate-bounce" />
-            <h3 className="text-xl font-semibold mb-2">Community Impact & Trust</h3>
-            <ul className="list-disc list-inside space-y-2 text-left">
-              <li><FaTree className="inline-block mr-2" />Local sustainability projects</li>
-              <li><FaUsers className="inline-block mr-2" />Inclusive access</li>
-              <li><FaLandmark className="inline-block mr-2" />Economic development</li>
-              <li><FaBookOpen className="inline-block mr-2" />On-chain transparency</li>
-              <li><FaHandsHelping className="inline-block mr-2" />Direct community support</li>
+
+          {/* Feature 4 */}
+          <div className="bg-white p-6 rounded-xl shadow hover:shadow-xl transition transform hover:scale-105">
+            <FaHandsHelping className="text-3xl text-purple-600 mb-4" />
+            <h4 className="text-xl font-semibold mb-2">Community Impact</h4>
+            <ul className="list-disc list-inside text-gray-600">
+              <li>Support local SMEs</li>
+              <li>Foster economic growth</li>
+              <li>Empower local developers</li>
+              <li>Transparent reporting</li>
+              <li>Real-world results</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* Footer with Social Icons */}
-      <footer className="mt-12 bg-gray-100 py-8">
+      {/* Footer Section */}
+      <footer className="bg-white mt-12 py-8">
         <div className="flex justify-center space-x-6 mb-4">
-          <a href="#" className="text-gray-600 hover:text-blue-500"><FaTwitter className="h-6 w-6" /></a>
-          <a href="#" className="text-gray-600 hover:text-blue-700"><FaFacebook className="h-6 w-6" /></a>
-          <a href="#" className="text-gray-600 hover:text-blue-400"><FaTelegramPlane className="h-6 w-6" /></a>
-          <a href="#" className="text-gray-600 hover:text-indigo-500"><FaDiscord className="h-6 w-6" /></a>
+          <a href="#" className="text-gray-600 hover:text-blue-600"><FaTwitter size={24} /></a>
+          <a href="#" className="text-gray-600 hover:text-blue-800"><FaFacebook size={24} /></a>
+          <a href="#" className="text-gray-600 hover:text-blue-500"><FaTelegramPlane size={24} /></a>
+          <a href="#" className="text-gray-600 hover:text-indigo-500"><FaDiscord size={24} /></a>
         </div>
         <p className="text-center text-gray-500">Your Name © {new Date().getFullYear()}</p>
       </footer>
     </div>
   );
 }
-
-export default App;
-
