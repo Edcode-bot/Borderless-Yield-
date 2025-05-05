@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Investment Opportunities - Borderless Yield</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script>
+    function filterProjects(region) {
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        const regionAttr = card.getAttribute('data-region');
+        card.style.display = (region === 'All' || region === regionAttr) ? 'block' : 'none';
+      });
+    }
+  </script>
+</head>
+<body>
+  <nav class="navbar">
+    <h1>Borderless Yield</h1>
+    <a href="/" class="btn">Home</a>
+  </nav>
+
+  <main class="content">
+    <h2 class="page-title">Investment Opportunities</h2>
+
+    <!-- Filter Buttons -->
+    <div class="filters">
+      <button onclick="filterProjects('All')">All</button>
+      <button onclick="filterProjects('Kenya')">Kenya</button>
+      <button onclick="filterProjects('Colombia')">Colombia</button>
+      <button onclick="filterProjects('Ghana')">Ghana</button>
+    </div>
+
+    <!-- Projects Grid -->
+    <div class="grid">
+      <% const sampleProjects = [
+        { id: 1, name: "TukTuk Solar Upgrade", country: "Kenya", target: 3000, raised: 1200, stablecoin: "cKES" },
+        { id: 2, name: "Coffee Farm Expansion", country: "Colombia", target: 5000, raised: 3500, stablecoin: "cCOP" },
+        { id: 3, name: "Youth Tech Bootcamp", country: "Ghana", target: 2500, raised: 900, stablecoin: "cGHS" }
+      ]; %>
+
+      <% sampleProjects.forEach(project => { %>
+        <div class="project-card" data-region="<%= project.country %>">
+          <h3><%= project.name %></h3>
+          <p><strong>Country:</strong> <%= project.country %></p>
+          <p><strong>Target:</strong> $<%= project.target %></p>
+          <p><strong>Raised:</strong> $<%= project.raised %></p>
+          <p><strong>Stablecoin:</strong> <%= project.stablecoin %></p>
+
+          <form action="/invest" method="POST">
+            <input type="hidden" name="projectId" value="<%= project.id %>">
+            <input type="hidden" name="projectName" value="<%= project.name %>">
+            <input type="hidden" name="stablecoin" value="<%= project.stablecoin %>">
+            <label>Amount: </label>
+            <input type="number" name="amount" required min="1" placeholder="e.g. 100" />
+            <button type="submit" class="btn">Invest</button>
+          </form>
+        </div>
+      <% }) %>
+    </div>
+  </main>
+    <p class="text-gray-700 mb-4">
+    No worries! If you don’t have enough funds, you can apply for a microloan directly on our platform. 
+    Borrow in local stablecoins and start growing your portfolio today.
+  </p>
+  <a 
+    href="/borrower" 
+    className="inline-block bg-red-600 text-white px-6 py-3 rounded-full text-lg font-semibold 
+               animate-pulse shadow-md hover:bg-red-700 transition-all duration-300"
+  >
+    Apply for a Loan
+  </a>
+      </div>      
+</body>
+</html>

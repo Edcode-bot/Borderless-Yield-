@@ -1,0 +1,235 @@
+body {
+  font-family: 'Segoe UI', sans-serif;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(to bottom right, #f0f9ff, #e0f7fa);
+  color: #333;
+}
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem 2rem;
+  background: white;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+}
+.navbar h1 {
+  font-size: 1.5rem;
+  color: #0077cc;
+}
+.navbar button {
+  background: #0077cc;
+  color: white;
+  border: none;
+  padding: 0.6rem 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.hero {
+  text-align: center;
+  padding: 4rem 2rem;
+  background: linear-gradient(to right, #d0f0c0, #e0f7fa);
+}
+.hero h2 {
+  font-size: 2.5rem;
+  color: #004080;
+}
+.hero p {
+  max-width: 600px;
+  margin: 1rem auto;
+  color: #555;
+}
+.btn {
+  display: inline-block;
+  margin-top: 1rem;
+  padding: 0.75rem 1.5rem;
+  background: #28a745;
+  color: white;
+  text-decoration: none;
+  border-radius: 20px;
+}
+.features {
+  padding: 3rem 2rem;
+}
+.features h3 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: #004080;
+}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+.feature {
+  background: white;
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+}
+.feature h4 {
+  color: #333;
+  margin-bottom: 0.5rem;
+}
+.feature ul {
+  padding-left: 1rem;
+  color: #666;
+}
+.footer {
+  text-align: center;
+  padding: 2rem;
+  background: #f4f4f4;
+  color: #777;
+  margin-top: 4rem;
+}
+.page-title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin: 2rem 0 1rem;
+  color: #004080;
+}
+.filters {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+.filters button {
+  margin: 0 0.5rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid #0077cc;
+  background: white;
+  color: #0077cc;
+  border-radius: 20px;
+  font-weight: bold;
+  cursor: pointer;
+}
+.filters button:hover {
+  background: #0077cc;
+  color: white;
+}
+.project-card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.05);
+  padding: 1.5rem;
+}
+.project-card h3 {
+  color: #0077cc;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
+}
+.progress-bar {
+  background: #ddd;
+  border-radius: 20px;
+  height: 10px;
+  margin: 1rem 0;
+}
+.progress-fill {
+  height: 100%;
+  background: #28a745;
+  border-radius: 20px;
+}
+.btn-invest {
+  width: 100%;
+  background: #28a745;
+  color: white;
+  padding: 0.6rem;
+  border-radius: 25px;
+  border: none;
+  cursor: pointer;
+  font-weight: bold;
+}
+.btn-invest:hover {
+  background: #218838;
+}
+.wallet-btn {
+  background-color: #2563eb;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.wallet-btn:hover {
+  background-color: #1d4ed8;
+}
+
+.wallet-address {
+  margin-left: 10px;
+  font-size: 0.9rem;
+  color: #444;
+}
+.connect-btn {
+  background: #4f46e5;
+  color: white;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.connect-btn:hover {
+  background: #3730a3;
+}
+.project-card {
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1.2rem;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  background-color: #fff;
+  transition: transform 0.2s ease;
+  position: relative;
+}
+
+.project-card:hover {
+  transform: translateY(-5px);
+}
+
+.project-card h3 {
+  margin-top: 0;
+  color: #2c3e50;
+}
+
+.project-card p {
+  margin: 0.2rem 0;
+  font-size: 0.95rem;
+}
+
+.invest-form {
+  margin-top: 1rem;
+}
+
+.invest-form input[type="number"] {
+  padding: 0.4rem;
+  margin-right: 0.5rem;
+  width: 100px;
+}
+
+.invest-btn {
+  background-color: #2ecc71;
+  color: white;
+  padding: 0.4rem 0.8rem;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.invest-btn:hover {
+  background-color: #27ae60;
+}
+
+.progress-container {
+  margin-top: 0.5rem;
+  background: #eee;
+  border-radius: 6px;
+  overflow: hidden;
+  height: 20px;
+}
+
+.progress-bar {
+  background-color: #3498db;
+  height: 100%;
+  color: white;
+  font-size: 0.75rem;
+  text-align: center;
+  line-height: 20px;
+}

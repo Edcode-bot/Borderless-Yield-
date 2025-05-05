@@ -1,0 +1,29 @@
+[
+  {
+    "id": 1746258009159,
+    "name": "Edcode",
+    "country": "Uganda ",
+    "stablecoin": "cKES",
+    "amount": "50",
+    "reason": "Investor",
+    "date": "2025-05-03T07:40:09.159Z"
+  },
+  {
+    "id": 1746258011583,
+    "name": "Edcode",
+    "country": "Uganda ",
+    "stablecoin": "cKES",
+    "amount": "50",
+    "reason": "Investor",
+    "date": "2025-05-03T07:40:11.583Z"
+  },
+  {
+    "id": 1746258218930,
+    "name": "Edcode",
+    "country": "Uganda ",
+    "stablecoin": "cKES",
+    "amount": "50",
+    "reason": "Invest",
+    "date": "2025-05-03T07:43:38.930Z"
+  }
+]

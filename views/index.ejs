@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Borderless Yield</title>
+  <link rel="stylesheet" href="/styles.css" />
+  <script defer src="/index.js"></script>
+</head>
+<body>
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h1>Borderless Yield</h1>
+    <div class="wallet-controls">
+      <button id="connectWalletBtn" class="wallet-btn">Connect Wallet</button>
+      <button id="disconnectBtn" class="wallet-btn red" style="display: none;">Disconnect</button>
+      <span id="walletAddress" class="wallet-address"></span>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header class="hero">
+    <h2>Invest in Local Impact</h2>
+    <p>
+      Borderless Yield is an open-source, decentralized platform that enables diaspora communities to invest small amounts in local businesses and individuals using local stablecoins (like $cKES, $cCOP, $cNGN). Rather than just sending remittances, users can support their home economies while earning returns, creating a cycle of sustainable financial empowerment.
+    </p>
+    <a href="/investor" class="btn">Get Started</a>
+  </header>
+
+  <!-- Features Section -->
+  <section class="features">
+    <h3>Key Benefits</h3>
+    <div class="grid">
+      <div class="feature">
+        <h4>Global Access</h4>
+        <ul>
+          <li>Multi-region support</li>
+          <li>Cross-border participation</li>
+          <li>Decentralized network</li>
+          <li>24/7 availability</li>
+          <li>Worldwide liquidity</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h4>Stablecoin Security</h4>
+        <ul>
+          <li>Price stability</li>
+          <li>Fast transactions</li>
+          <li>Low fees</li>
+          <li>Asset-backed coins</li>
+          <li>Secure wallets</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h4>High Yield</h4>
+        <ul>
+          <li>Attractive interest rates</li>
+          <li>Compounded returns</li>
+          <li>Diverse assets</li>
+          <li>Smart contract automation</li>
+          <li>Real-time rewards</li>
+        </ul>
+      </div>
+      <div class="feature">
+        <h4>Community Impact</h4>
+        <ul>
+          <li>Support local SMEs</li>
+          <li>Foster economic growth</li>
+          <li>Empower local developers</li>
+          <li>Transparent reporting</li>
+          <li>Real-world results</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© Borderless Yield <%= new Date().getFullYear() %></p>
+  </footer>
+</body>
+</html>

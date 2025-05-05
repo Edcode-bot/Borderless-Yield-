@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Loan Applications</title>
+  <style>
+    table { width: 100%; border-collapse: collapse; margin: 2rem auto; }
+    th, td { border: 1px solid #ccc; padding: 10px; text-align: left; }
+    th { background-color: #f4f4f4; }
+  </style>
+</head>
+<body>
+  <h2 style="text-align: center;">Loan Applications</h2>
+  <table>
+    <tr>
+      <th>Name</th>
+      <th>Country</th>
+      <th>Stablecoin</th>
+      <th>Amount</th>
+      <th>Reason</th>
+      <th>Date</th>
+    </tr>
+    <% applications.forEach(app => { %>
+      <tr>
+        <td><%= app.name %></td>
+        <td><%= app.country %></td>
+        <td><%= app.stablecoin %></td>
+        <td><%= app.amount %></td>
+        <td><%= app.reason %></td>
+        <td><%= new Date(app.date).toLocaleString() %></td>
+      </tr>
+    <% }); %>
+  </table>
+</body>
+    </html>
+      
